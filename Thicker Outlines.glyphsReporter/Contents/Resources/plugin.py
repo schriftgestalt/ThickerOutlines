@@ -29,11 +29,17 @@ class ThickerOutlines(ReporterPlugin):
 		graphicView = self.controller.graphicView()
 		print(graphicView.backgroundColor(), graphicView.foregroundColor())
 		graphicView.backgroundColor().set()
-		layer.bezierPath.setLineWidth_(2.25 / self.getScale())
-		layer.bezierPath.stroke()
+		bezierPath = layer.bezierPath
+		openBezierPath = layer.openBezierPath
+		bezierPath.setLineWidth_(2.25 / self.getScale())
+		bezierPath.stroke()
+		openBezierPath.setLineWidth_(2.25 / self.getScale())
+		openBezierPath.stroke()
 		graphicView.foregroundStrokeColor().set()
-		layer.bezierPath.setLineWidth_(1.5 / self.getScale())
-		layer.bezierPath.stroke()
+		bezierPath.setLineWidth_(1.5 / self.getScale())
+		bezierPath.stroke()
+		openBezierPath.setLineWidth_(1.5 / self.getScale())
+		openBezierPath.stroke()
 		
 
 	@objc.python_method

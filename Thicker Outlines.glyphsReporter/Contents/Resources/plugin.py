@@ -29,8 +29,8 @@ class ThickerOutlines(ReporterPlugin):
 		graphicView = self.controller.graphicView()
 		print(graphicView.backgroundColor(), graphicView.foregroundColor())
 		graphicView.backgroundColor().set()
-		bezierPath = layer.bezierPath
-		openBezierPath = layer.openBezierPath
+		bezierPath = layer.completeBezierPath
+		openBezierPath = layer.completeOpenBezierPath
 		bezierPath.setLineWidth_(2.25 / self.getScale())
 		bezierPath.stroke()
 		openBezierPath.setLineWidth_(2.25 / self.getScale())
